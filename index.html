@@ -8,6 +8,7 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer=""></script>
         <script src="assets/vue.js" defer></script>
         <link rel="stylesheet" href="assets/style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
 
     <body>
@@ -19,25 +20,34 @@
             <div id="app">
 
                 <!-- Add Tasks -->
-                <label for="add-task">Aggiungi qualcosa da fare:</label>
-                <input 
-                    type="text"
-                    name="add-task"
-                    v-model="newTask"
-                    @keyup.enter="addTask"
-                >
-                <button
-                    @click="addTask"
-                >Aggiungi
-                </button>
+                <div class="contain">
+                    <label for="add-task">Aggiungi qualcosa da fare:</label>
+                    <input 
+                        type="text"
+                        name="add-task"
+                        placeholder="Nuovo task"
+                        v-model="newTask"
+                        @keyup.enter="addTask"
+                    >
+                    <button
+                            @click="addTask"
+                    >Aggiungi
+                    </button>
+                </div>
+                
 
                 <!-- To Do List -->
-                <ul>
-                    <li
-                        v-for="(task, index) in taskArray"
-                    >{{ task.text }}
-                    </li>
-                </ul>
+                <div class="contain">
+                    <ul>
+                        <li
+                            v-for="(task, index) in taskArray"
+                        >
+                            <span>{{ task.text }}</span>
+                        
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </li>
+                    </ul>
+                </div>               
             </div>
         </div>
     </body>
