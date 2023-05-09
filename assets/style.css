@@ -30,12 +30,24 @@ h1 {
     margin: 2rem;
 }
 
-#app {
+.contain {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
     height: 6rem;
+}
+
+input {
+    width: 30%;
+}
+
+ul {
+    background-color: greenyellow;
+    margin: 1rem;
+    padding-inline: 1rem;
+    border-radius: 10px;
+    width: 50%;
 }
 
 button {
@@ -47,4 +59,9 @@ button {
 
 li {
     list-style: none;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: black;
+    display: flex;
+    justify-content: space-between;
 }
