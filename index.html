@@ -8,16 +8,36 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer=""></script>
         <script src="assets/vue.js" defer></script>
         <link rel="stylesheet" href="assets/style.css">
-        
     </head>
+
     <body>
         <div class="container">
+            <!-- Title -->
             <h1>TO DO LIST</h1>
+
+            <!-- Start App -->
             <div id="app">
+
+                <!-- Add Tasks -->
                 <label for="add-task">Aggiungi qualcosa da fare:</label>
-                <input type="text" name="add-task" id=""
-                v-model="newTask" @keyup.enter="addTask">
-                <button @click="addTask">Aggiungi</button>
+                <input 
+                    type="text"
+                    name="add-task"
+                    v-model="newTask"
+                    @keyup.enter="addTask"
+                >
+                <button
+                    @click="addTask"
+                >Aggiungi
+                </button>
+
+                <!-- To Do List -->
+                <ul>
+                    <li
+                        v-for="(task, index) in taskArray"
+                    >{{ task.text }}
+                    </li>
+                </ul>
             </div>
         </div>
     </body>

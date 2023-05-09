@@ -1,12 +1,33 @@
 const app = Vue.createApp({
 	data() {
 		return {
-            newTask:'',           
+            // Initial value of html input text
+            newTask:'',  
+            // Array
+            taskArray: [
+                {
+                    text:'Fare l\'esercizio',
+                    done: false,
+                },
+                {
+                    text:'lavare i piatti',
+                    done:false,
+                },
+                {
+                    text:'fare la spesa',
+                    done:false,
+                },
+            ]    
 		}        
 	},
-     methods: {
+    methods: {
+        // Add Task to array
         addTask(){
-        console.log(this.newTask)
+        this.taskArray.push({
+                text: this.newTask,
+                done:false,
+            });
+            this.newTask='';
         }
     }
 });
